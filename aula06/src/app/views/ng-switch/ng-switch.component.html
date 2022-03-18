@@ -1,0 +1,11 @@
+<h3>Exemplo de ngSwitch</h3>
+
+
+<input type="text" [(ngModel)]="dog ">
+
+<div [ngSwitch] ="dog">
+  <img *ngSwitchCase="'rotweiller'" src="assets/rotweiller.jpg">
+  <img *ngSwitchCase="'doberman'" src="assets/doberman.jpg">
+  <img *ngSwitchCase="'golden'" src="assets/golden.jpg">
+      <div *ngSwitchDefault>cachorro nao encontrado</div>
+</div>

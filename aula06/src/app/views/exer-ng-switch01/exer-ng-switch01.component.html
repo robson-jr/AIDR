@@ -1,0 +1,24 @@
+<hr>
+
+<h3></h3>
+<input type="text" [(ngModel)]="canal ">
+
+<div [ngSwitch]="canal">
+  <div *ngSwitchCase="'podpah'">
+  <h4>PodPah</h4>
+  <a href="https://www.youtube.com/podpah">ir para o canal </a>
+
+  <div *ngSwitchCase="'Canal Canalha'">
+  <h4>Canal Canalha</h4>
+  <a href="https://www.youtube.com/user/CanalCanalha">ir para o canal </a>
+  <div *ngSwitchCase="'Canal Canalha'">
+    <h4>Casimito</h4>
+    <a href="https://www.youtube.com/watch?v=HxoD2BCGOJQ">ir para o canal </a>
+
+
+<div *ngSwitchDefault>
+  Canal nao encontrado
+</div>
+  </div>
+</div>
+

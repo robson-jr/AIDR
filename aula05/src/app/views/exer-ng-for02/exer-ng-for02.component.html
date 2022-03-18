@@ -1,0 +1,6 @@
+ <ol>
+   <li *ngFor="let pais of vetorPaises" (click)="mostrarNome(pais)">
+    {{pais | titlecase}}
+    <img src="{{pais}}">
+  </li>
+ </ol>

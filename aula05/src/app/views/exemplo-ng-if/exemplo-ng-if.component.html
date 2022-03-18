@@ -1,0 +1,10 @@
+
+  <h3> exemplo de ngif/<h3>
+    <input [(ngModel)]= "nome" placeholder="nome">
+    <input [(ngModel)]= "sobrenome" placeholder="sobrenome">
+
+
+    <div *ngIF="nome && sobrenome">
+      nome:{{nome}}
+      sobrenome:{{sobrenome}}
+      </div>

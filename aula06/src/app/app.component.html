@@ -1,0 +1,14 @@
+<div>
+  <button (click)="Exercicio='ex1'">Exemplo NgSwitch</button>
+  <button (click)="Exercicio='ex2'">Exemplo NgSwitch02</button>
+</div>
+
+
+
+<div [ngSwitch]="Exercicio">
+
+<app-ng-switch *ngSwitchCase ="'ex1'"></app-ng-switch>
+<app-exer-ng-switch01 *ngSwitchCase ="'ex2'"></app-exer-ng-switch01>
+<div *ngSwitchDefault>
+</div>
+</div>

@@ -1,0 +1,15 @@
+.background-verde{
+  background-color: greenyellow;
+
+}
+
+.fonte-nome{
+  font-family:'Times New Roman', Times, serif;
+  color:aquamarine;
+}
+
+
+.fonte-idade{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:crimson;
+}
