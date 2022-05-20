@@ -10,6 +10,7 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class ClienteComponent implements OnInit {
   clientes = new Array<Cliente>()
   cliente?: Cliente;
+  editando = false;
   //clientes:Cliente[] = []
 
   constructor(private clienteService:ClienteService) { }
@@ -26,16 +27,41 @@ export class ClienteComponent implements OnInit {
 
   novo(){
     this.cliente = new Cliente();
+    this.editando = false;
   }
 
   salvar(){
     if(this.cliente){
 
-      this.clienteService.inserir(this.cliente).subscribe(cliente =>{
-        this.listar();  
-      });
+      if(!this.editando){
+        this.clienteService.inserir(this.cliente).subscribe(cliente =>{
+          this.listar();  
+          this.cliente = undefined;
+
+        });
+      }
+      else{
+        this.clienteService.atualizar(this.cliente).subscribe(cliente =>{
+          this.listar();
+          this.cliente = undefined;
+        });
+      }
+      
     }
    
+  }
+
+  excluir(id:number){
+
+    this.clienteService.remover(id).subscribe(() =>{
+
+      this.listar();
+    });
+  }
+
+  editar(cliente: Cliente){
+    this.cliente = cliente;
+    this.editando = true;
   }
 
 }

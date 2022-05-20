@@ -17,9 +17,16 @@ export class ClienteService {
   }
 
   inserir(cliente: Cliente): Observable<Cliente>{
-    return this.http.post<Cliente>(`${environment.apiEndpoint}/cliente`, cliente)
+    return this.http.post<Cliente>(`${environment.apiEndpoint}/cliente`, cliente);
   }
 
+  remover(id: number):Observable<any> {
+    return this.http.delete(`${environment.apiEndpoint}/cliente/${id}`);
+  }
+
+  atualizar(cliente: Cliente): Observable<Cliente>{
+    return this.http.put<Cliente>(`${environment.apiEndpoint}/cliente/${cliente.id}`,cliente);
+  }
 
 
 }
